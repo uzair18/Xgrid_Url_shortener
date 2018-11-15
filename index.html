@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="urlShortnerApp">
-  <head>
-    <title>URL Shortener</title>
-    <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
-    <script src = "app/lib/angular.min.js"></script>
-    <script src = "app/app.js"></script>
-  </head>
+<html lang="en" ng-app="urlShortenerApp">
+     <head>
+          <title>URL Shortener</title>
+          <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+          <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+               integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+          <script src = "app/lib/angular.min.js"></script>
+          <script src='https://www.google.com/recaptcha/api.js'></script>
+          <script src = "app/lib/angular-route.min.js"></script>
+          <script src = "app/app.js"></script>
+          <script src = "app/shortener/shortener.js"></script>
+          <script src = "app/navbar/navbar.js"></script>
+     </head>
 
-  <body ng-init>
+     <body ng-init>
+          <header ng-include="'app/navbar/navbar.html'"></header>
+          <div ng-view></div>
 
-    <h1>Simplify Your Links</h1>
-    <div ng-controller="urlShorterController">
-      <div class = "url_input" >
 
-          <input type="text" ng-model="sourceURL" placeholder="Your original URL here" />
-          <button type="submit" ng-click="getShortenedUrl(sourceURL)">SHORTEN URL</button>
-      </div>
 
-      <div  class="shorten_output"> Shortened URL: {{url}}</div>
-    </div>
-
-  </body>
+     </body>
+</html>

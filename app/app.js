@@ -1,30 +1,9 @@
-var urlShortnerApp = angular.module('urlShortnerApp',[]);
+var urlShortenerApp = angular.module('urlShortenerApp',['ngRoute']);
 
+urlShortenerApp.config(function($routeProvider){
 
-
-urlShortnerApp.controller("urlShorterController", function($scope, $http){
-
-$scope.apiKey = "2aedfddee819a011e21f086ed6a4b0c95b39c93f"
-$scope.baseUrl = "https://api-ssl.bitly.com/v3/"
-
-$scope.url = ""
-
-$scope.getShortenedUrl= function(url){
-
-
-$http.get($scope.baseUrl+"shorten?access_token="+$scope.apiKey+"&longUrl="+url)
-    	.then(function(response) {
-						if (response.data.data == "")
-							$scope.url = response.data.status_txt;
-						else
-							$scope.url = response.data.data.url;
-						},
-
-						function(response) {$scope.url = "Error"});
-
-}
-
-
-
-
+     $routeProvider
+	    .when('/shortener', {templateUrl:'app/shortener/shortener.html', controller:'urlShortenerController'})
+         .when('/dashboard', {templateUrl:'app/dashboard/dashboard.html'})
+         .otherwise({redirectTo:'/shortener'});
 });

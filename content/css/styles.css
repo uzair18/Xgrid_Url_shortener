@@ -1,41 +1,150 @@
+/*Navbar Styling*/
+body
+{
+     font-family: Helvetica;
+     margin: 0;
+}
+
+#menu-bar
+{
+     background: #e60000;
+     color: #ffffff;
+     padding: 10px;
+     min-width: 500px;
+}
+
+#menu-bar h1
+{
+     font-size: 24px;
+     font-weight: normal;
+     display: inline-block;
+     margin: 0;
+}
+
+#menu-bar ul
+{
+     float: right;
+     list-style-type: none;
+     padding: 0;
+     margin: 6px 0;
+}
+
+#menu-bar li
+{
+     float: right;
+     margin-left: 20px;
+}
+
+#menu-bar a
+{
+     color: #ffffff;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+}
+
+#menu-bar a:hover
+{
+     background-color:#b30000;
+}
+.active
+{
+     background-color:#b30000;
+}
+
 /*Title Styling*/
-h1{
-  text-align: center;
-  font-size: 50px;
+.title
+{
+     text-align: center;
+     font-size: 50px;
+     min-width: 500px;
+     width:40%;
+     margin-left:30%;
 }
 
 
 /*Input and Submit Styling*/
-.url_input:after {
-  display: table;
-}
-.url_input input[type=text] {
-  padding: 10px;
-  margin-left: 30%;
-  width: 40%;
-  font-size: 18px;
-  border: 1px solid grey;
-  float: left;
-  background: #f1f1f1;
-}
-.url_input button {
-  float: left;
-  width: auto;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 18px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
+.urlShortner
+{
+     width:40%;
+     min-width: 500px;
+     margin-left:30%;
 }
 
+.urlShortner input[type=text]
+{
+     padding: 10px;
+     width: 100%;
+     font-size: 18px;
+     border: 1px solid grey;
+     float: left;
+     background: #f1f1f1;
+     margin-bottom:20px;
+}
 
-.shorten_output {
-clear: left;
-float:left;
-width:100%;
-padding: 10px;
-text-align: center;
-font-size: 20px;
+.g-recaptcha
+{
+     width:56%;
+     margin-left:22%;
+     text-align: center;
+     font-size: 20px;
+}
+
+.shortenBtn
+{
+     width: 40%;
+     margin-left:30%;
+     margin-top: 80px;
+     padding: 10px;
+     background: #e60000;
+     color: white;
+     font-size: 18px;
+     border: 1px solid grey;
+     cursor: pointer;
+}
+.shortenBtn:hover
+{
+     background: #b30000;
+}
+.urlShortner #output
+{
+     width:100%;
+     padding: 10px;
+     margin-top:20px;
+     display:table;
+}
+
+.urlShortner #shortenedUrl
+{
+     width:100%;
+     text-align: center;
+     font-size: 18px;
+     padding: 10px;
+     border: 1px solid grey;
+     background: #f1f1f1;
+     display:table-cell;
+     vertical-align: middle;
+}
+
+.copyBtn
+{
+     width:40px;
+     height:50px;
+     background:#e60000;
+     color:white;
+     font-size:24px;
+     border:1px solid grey;
+     cursor:pointer;
+     display:table-cell;
+     vertical-align:middle;
+}
+
+.copyBtn:hover
+{
+     background:#b30000;
+}
+
+.has-error
+{
+     color:red;
 }

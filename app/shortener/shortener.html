@@ -1,0 +1,10 @@
+<h1 class="title">Simplify Your Links</h1>
+<div class = "urlShortner">
+     <input type="text" ng-model="sourceURL" placeholder="Your original URL here" />
+     <div class="g-recaptcha" data-sitekey="{{recaptchaKey}}" data-callback="checkCorrectCaptcha"></div>
+     <button class = "shortenBtn" type="submit" ng-click="getShortenedUrl(sourceURL)">SHORTEN URL</button>
+     <div  id="output" ng-show="showOutput">
+          <div id="shortenedUrl" ng-class="{'has-error':isError}">{{shortUrl}}</div>
+          <button class="copyBtn" ng-hide= "isError" ng-click="copyToClipboard(shortUrl)"><i class="fas fa-copy"></i></button>
+     </div>
+</div>
