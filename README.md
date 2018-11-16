@@ -2,7 +2,7 @@
 
 ## Getting Started
 To run the project you will need a local server running. After that just run index.html file. For testing and development at
-my end [Atom]https://atom.io/ was used with atom-live-server package.
+my end [Atom](https://atom.io/) was used with atom-live-server package.
 
 ## Running the tests
 
