@@ -8,6 +8,19 @@ my end [Atom]https://atom.io/ was used with atom-live-server package.
 
 Here are some screen shots of testing.
 
+![Shorten page](https://github.com/uzair18/Xgrid_Url_shortener/blob/master/images/screencapture-127-0-0-1-65007-2018-11-16-08_39_22.png)
+
+![Filled Shorten page](https://github.com/uzair18/Xgrid_Url_shortener/blob/master/images/screencapture-127-0-0-1-65007-2018-11-16-08_39_40.png)
+
+![Shorten URL Response](https://github.com/uzair18/Xgrid_Url_shortener/blob/master/images/screencapture-127-0-0-1-65007-2018-11-16-08_39_48.png)
+
+![Dashboard](https://github.com/uzair18/Xgrid_Url_shortener/blob/master/images/screencapture-127-0-0-1-65007-2018-11-16-08_39_59.png)
+
+![Dashboard Filter](https://github.com/uzair18/Xgrid_Url_shortener/blob/master/images/screencapture-127-0-0-1-65007-2018-11-16-08_40_08.png)
+
+![Bug](https://github.com/uzair18/Xgrid_Url_shortener/blob/master/images/screencapture-127-0-0-1-65007-2018-11-16-08_38_48.png)
+
+
 
 ## Development
 
