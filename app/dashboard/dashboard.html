@@ -1,1 +1,21 @@
-<h1>Dashboard</h1>
+<h1 class="title">Dashboard</h1>
+<div class = "dashboard">
+     <input type="text" ng-model="search" placeholder="Search" />
+     <table id="linksTable">
+          <tr class="tableTitles">
+               <th>Long URL</th>
+               <th>Short URL</th>
+               <th>Title</th>
+               <th>Clicks</th>
+               <th>Created On</th>
+          </tr>
+          <tr class="tableData" ng-repeat="linkDetails in linksDetails | orderBy:'long' | filter: search">
+               <th>{{linkDetails.long}}</th>
+               <th>{{linkDetails.short}}</th>
+               <th>{{linkDetails.title}}</th>
+               <th>{{linkDetails.clicks}}</th>
+               <th>{{linkDetails.createdAt* 1000 | date: 'h:mm:ss a MM/dd/yyyy'}}</th>
+          </tr>
+     </table>
+
+</div>

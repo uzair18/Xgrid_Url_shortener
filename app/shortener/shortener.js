@@ -1,9 +1,9 @@
 var urlShortenerApp = angular.module('urlShortenerApp');
 
-urlShortenerApp.controller("urlShortenerController", function($scope, $http){
+urlShortenerApp.controller("urlShortenerController", function($scope, $http, $localStorage){
 
-     $scope.apiKey = "2aedfddee819a011e21f086ed6a4b0c95b39c93f";
-     $scope.baseUrl = "https://api-ssl.bitly.com/v3/";
+     var apiKey = "2aedfddee819a011e21f086ed6a4b0c95b39c93f";
+     var baseUrl = "https://api-ssl.bitly.com/v3/";
      $scope.recaptchaKey = "6Lft33oUAAAAAD29roKW1Mnbq4EM8_qRrYtvM_lx";
 
      $scope.shortUrl = "";
@@ -19,10 +19,16 @@ urlShortenerApp.controller("urlShortenerController", function($scope, $http){
                $scope.correctCaptcha = true;
      };
 
+     $scope.resetCaptcha = function()
+     {
+          grecaptcha.reset();
+          $scope.correctCaptcha = false;
+     }
+
      $scope.getShortenedUrl = function(url)
      {
           if (url == "" || url == undefined || url.length == 0)
-               return 0;
+               return;
           //Check url input and encode it
           var pattern = /^((http|https|ftp):\/\/)/;
           if(!pattern.test(url))
@@ -32,7 +38,7 @@ urlShortenerApp.controller("urlShortenerController", function($scope, $http){
           //Check for Captcha
           if ($scope.correctCaptcha)
           {
-               $http.get($scope.baseUrl+"shorten?access_token="+$scope.apiKey+"&longUrl="+url)
+               $http.get(baseUrl+"shorten?access_token="+apiKey+"&longUrl="+url)
                     .then(function(response)
                     {
                          if (response.data.data == "")
@@ -41,7 +47,16 @@ urlShortenerApp.controller("urlShortenerController", function($scope, $http){
                               $scope.isError = true;
                          }
                          else
+                         {
                               $scope.shortUrl = response.data.data.url;
+                              if ($localStorage.savedLinks == "" || $localStorage.savedLinks == undefined
+                                   || $localStorage.savedLinks.length == 0)
+                              {
+                                   $localStorage.savedLinks = [$scope.shortUrl];
+                              }
+                              else
+                                   $localStorage.savedLinks.push($scope.shortUrl);
+                         }
                     },
                     function(response)
                     {
@@ -54,10 +69,10 @@ urlShortenerApp.controller("urlShortenerController", function($scope, $http){
                $scope.shortUrl = "Please verify you're not a robot!";
                $scope.isError = true;
           }
-          grecaptcha.reset();
-          $scope.correctCaptcha = false;
           $scope.showOutput = true;
+          $scope.resetCaptcha();
      };
+
 
      $scope.copyToClipboard = function (str)
      {
