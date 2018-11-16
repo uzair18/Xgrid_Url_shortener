@@ -1,21 +1,13 @@
 # Xgrid URL Shortener
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
+To run the project you will need a local server running. After that just run index.html file. For testing and development at
+my end [Atom]https://atom.io/ was used with atom-live-server package.
 
 ## Running the tests
+
+Here are some screen shots of testing.
+
 
 ## Development
 
